@@ -1,21 +1,16 @@
 # Min-Heap Console Application
 
-## Introduction
-This is a simple Java console application that implements a Min-Heap data structure. A Min-Heap is a binary tree where the parent node is smaller than its child nodes, making it useful for applications like priority queues.
+## Introduction  
+This Java console application demonstrates a Min-Heap data structure, where the smallest value is always at the root. It is commonly used in tasks like priority queues and scheduling.
 
-## What the Application Can Do
-- The application allows inserting values into the Min-Heap.
-- It can remove and return the smallest value (the root of the heap).
-- It demonstrates the heapify-up and heapify-down operations for maintaining the heap property.
+## What the Application Can Do  
+1. Insert values into the heap.  
+2. Remove and display the smallest value.  
+3. Show the current heap structure interactively.
 
-## Why This Application Was Made
-This application was created to demonstrate how heap data structures work, specifically focusing on the Min-Heap variant. Understanding how heaps maintain their structure after insertions and removals is crucial in fields like algorithm design, priority queues, and resource scheduling systems.
+## Why This Application Was Made  
+The application helps users understand how heaps work by simulating insertion and removal operations. It’s a practical tool for learning fundamental data structures.
 
-## How This Contributes
-
-### For the User:
-- It helps understand heap operations and their importance in algorithm efficiency.
-- It showcases real-world use cases such as scheduling tasks or managing a priority queue.
-
-### For the Community:
-- This application could be used as a reference for understanding and implementing heap-based solutions in other systems or applications.
+## How This Contributes  
+- **For the User:** Simplifies learning heap operations.  
+- **For the Community:** Provides a reusable example of heap-based solutions.
