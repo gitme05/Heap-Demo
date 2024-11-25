@@ -13,12 +13,12 @@ public class MinHeap {
     }
 
     public int removeMin() {
-        if (heap.size() == 0) {
+        if (heap.isEmpty()) {
             throw new NoSuchElementException("Heap is empty");
         }
         int min = heap.get(0);
         int last = heap.remove(heap.size() - 1);
-        if (heap.size() > 0) {
+        if (!heap.isEmpty()) {
             heap.set(0, last);
             heapifyDown();
         }
@@ -64,21 +64,53 @@ public class MinHeap {
     }
 
     public void printHeap() {
-        System.out.println(heap);
+        System.out.println("Current Heap: " + heap);
     }
 
     public static void main(String[] args) {
         MinHeap minHeap = new MinHeap();
-        minHeap.insert(10);
-        minHeap.insert(5);
-        minHeap.insert(30);
-        minHeap.insert(3);
-        minHeap.insert(15);
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Heap after insertions: ");
-        minHeap.printHeap();
+        System.out.println("Welcome to the Min-Heap Application!");
+        while (true) {
+            System.out.println("\nChoose an option:");
+            System.out.println("1. Insert a value");
+            System.out.println("2. Remove the minimum value");
+            System.out.println("3. Display the heap");
+            System.out.println("4. Exit");
 
-        System.out.println("Removing minimum value: " + minHeap.removeMin());
-        minHeap.printHeap();
+            System.out.print("Enter your choice: ");
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter a value to insert: ");
+                    int value = scanner.nextInt();
+                    minHeap.insert(value);
+                    System.out.println(value + " has been added to the heap.");
+                    break;
+
+                case 2:
+                    try {
+                        int minValue = minHeap.removeMin();
+                        System.out.println("Removed the minimum value: " + minValue);
+                    } catch (NoSuchElementException e) {
+                        System.out.println("The heap is empty.");
+                    }
+                    break;
+
+                case 3:
+                    minHeap.printHeap();
+                    break;
+
+                case 4:
+                    System.out.println("Exiting the program. Goodbye!");
+                    scanner.close();
+                    return;
+
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        }
     }
 }
